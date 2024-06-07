@@ -1,4 +1,4 @@
-# Lab11 - Docker Compose
+# Lab12
 
 ## Skład projektu
 - **Nginx** - serwer internetowy
