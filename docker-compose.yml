@@ -1,0 +1,57 @@
+secrets:
+  mysql_root_password:
+    file: ./secrets/mysql_root_password.txt
+  mysql_user_password:
+    file: ./secrets/mysql_user_password.txt
+
+services:
+  nginx:
+    image: nginx:1.21.6
+    ports:
+      - "4001:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./www:/var/www/html
+    networks:
+      - frontend
+      - backend
+
+  php:
+    build: .
+    command: ["sh", "-c", "sleep 10 && docker-php-entrypoint php-fpm"]
+    volumes:
+      - ./www:/var/www/html
+    networks:
+      - backend
+    secrets:
+      - mysql_user_password
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD_FILE: /run/secrets/mysql_user_password
+    networks:
+      - backend
+    secrets:
+      - mysql_root_password
+      - mysql_user_password
+
+  phpmyadmin:
+    image: phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: user
+      PMA_PASSWORD_FILE: /run/secrets/mysql_user_password
+    ports:
+      - "6001:80"
+    networks:
+      - backend
+    secrets:
+      - mysql_user_password
+
+networks:
+  frontend:
+  backend:
