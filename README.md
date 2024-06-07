@@ -26,7 +26,7 @@ docker-compose up -d --build
 ```bash
 docker-compose ps
 ```
-<img width="912" alt="image" src="https://github.com/SlaneDRV/DockerLab11/assets/125742851/32848900-c269-4d03-b747-eb1ac4ea9e2d">
+<img width="973" alt="image" src="https://github.com/SlaneDRV/DockerLab12/assets/125742851/79e9f446-6060-4d3e-b232-7226c8e377dd">
 
 ## Nginx: 
 http://localhost:4001
@@ -39,7 +39,7 @@ Strona startowa Nginx z wynikiem połączenia z MySQL.
 ## phpMyAdmin: 
 http://localhost:6001
 
-<img width="1440" alt="image" src="https://github.com/SlaneDRV/DockerLab11/assets/125742851/7f188da9-5981-494d-92ca-8b6293122828">
+<img width="1440" alt="image" src="https://github.com/SlaneDRV/DockerLab12/assets/125742851/53687eb4-28f7-46ce-bb63-f9af763de137">
 
 
 Interfejs phpMyAdmin do zarządzania bazą danych.
