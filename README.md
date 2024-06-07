@@ -13,6 +13,9 @@
 - `Dockerfile` - konfiguracja obrazu PHP z potrzebnymi rozszerzeniami
 - `mysql_root_password.txt` i `mysql_user_password.txt` - Pliki przechowujące sekrety (nie są uwzględnione w repozytorium).
 
+<img width="1205" alt="image" src="https://github.com/SlaneDRV/DockerLab12/assets/125742851/2d2c08a9-d6ae-44fc-865a-c060422ca68f">
+
+
 
 ## Uruchamianie projektu
 ```bash
